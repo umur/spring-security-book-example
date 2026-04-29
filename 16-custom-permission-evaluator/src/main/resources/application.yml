@@ -1,0 +1,15 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: custom-permission-evaluator-example
+  datasource:
+    url: jdbc:h2:mem:custompermdb
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true

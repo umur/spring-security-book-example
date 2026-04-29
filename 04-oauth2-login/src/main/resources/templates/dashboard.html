@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Dashboard — OAuth2 Example</title>
+</head>
+<body>
+<h1>Dashboard</h1>
+
+<p>Welcome, <span th:text="${dashboardInfo.name}" id="user-name">User</span>!</p>
+<p>Email: <span th:text="${dashboardInfo.email}" id="user-email"></span></p>
+<p th:if="${dashboardInfo.picture != null and !dashboardInfo.picture.isEmpty()}">
+    <img th:src="${dashboardInfo.picture}" alt="Profile picture" width="64" height="64"/>
+</p>
+<p>Provider: <span th:text="${dashboardInfo.provider}" id="user-provider"></span></p>
+
+<form th:action="@{/logout}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit">Sign out</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Mock IdP metadata for development and testing.
+  In production, replace this file (or the metadata-uri property) with the
+  real identity provider's metadata URL or XML document.
+
+  Key elements:
+  - entityID:          The IdP's unique identifier
+  - IDPSSODescriptor:  Declares the IdP's SSO binding and certificate
+  - SingleSignOnService: The URL Spring Security redirects the browser to
+-->
+<md:EntityDescriptor
+    xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    entityID="https://mock-idp.example.com/saml/metadata">
+
+  <md:IDPSSODescriptor
+      WantAuthnRequestsSigned="false"
+      protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509Certificate>MIIDTzCCAjegAwIBAgIUdqWfRQtaif1KHZff5FevlMEZMTEwDQYJKoZIhvcNAQELBQAwNzEWMBQGA1UEAwwNbW9jay1pZHAtZGVtbzEQMA4GA1UECgwHRXhhbXBsZTELMAkGA1UEBhMCVVMwHhcNMjYwMzI2MTU0NTUwWhcNMzYwMzIzMTU0NTUwWjA3MRYwFAYDVQQDDA1tb2NrLWlkcC1kZW1vMRAwDgYDVQQKDAdFeGFtcGxlMQswCQYDVQQGEwJVUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKfmAPnSEtG54Hop7G5b14oSF0mZN3KVvG/BiJGXepyiL29nxMDm/I3mobT8J/Lxk+x67MPm8Joe9onmBr0x7Hzy6NJ3ACa2K7Xc5hCJ7xKVRsFR4cGy0D9rUbyGcbe2/6Z6Q9LYkmk99ZsTB/YMh1S6dbeR2VcBB8lm9FEZGjrqdIqydYuyUSVLtOFCcNRto+Xvgyj66LTZfyKffS8RDfaeBW+ichLd1ItWeF3dFa2CCd1N9QpzhDrrRv8aWZ6LmAZQP2jsRDcrLnBvp1GziUpIoKdtwY31/z/T4eiCOWlTNdxtRq/7+YEXZ6YaxBwwo+HH3Fs6SQVRs78QLDFdcNsCAwEAAaNTMFEwHQYDVR0OBBYEFJA3ux6UPyTzymhSghab+EqtaKOdMB8GA1UdIwQYMBaAFJA3ux6UPyTzymhSghab+EqtaKOdMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHHrzjIDYgbxXmDArXdkE7L++J9q/KdhZJOAzseecIogVutNIo8dlkYIjJzjYcmToBmDv2TI4gW5nZCTp5AKp0aWfT0YkyoT3rqt1OvZZZyLHfaIt/nlCufYRs92kku5+p6LceU4DGwbnangvyLeVbjHsSceypD2zN7A2nTM1Xz86otMggAZxAwoKgL3tvtzMYrxU0f1+eDx9RPQZ5fug48bj+8edtQ2S4iv2Fbe0UHWaHAdSCrJklV9iFK8gNiijxmcx/qLfdMrCWAN+8L/GdzVBrn6zR6SF5jNrpOToLjqeQEKY10TPPwCHST1FNzr8PfAGNb6waZkh+nWvEpYgQk=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509Certificate>MIIDTzCCAjegAwIBAgIUdqWfRQtaif1KHZff5FevlMEZMTEwDQYJKoZIhvcNAQELBQAwNzEWMBQGA1UEAwwNbW9jay1pZHAtZGVtbzEQMA4GA1UECgwHRXhhbXBsZTELMAkGA1UEBhMCVVMwHhcNMjYwMzI2MTU0NTUwWhcNMzYwMzIzMTU0NTUwWjA3MRYwFAYDVQQDDA1tb2NrLWlkcC1kZW1vMRAwDgYDVQQKDAdFeGFtcGxlMQswCQYDVQQGEwJVUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKfmAPnSEtG54Hop7G5b14oSF0mZN3KVvG/BiJGXepyiL29nxMDm/I3mobT8J/Lxk+x67MPm8Joe9onmBr0x7Hzy6NJ3ACa2K7Xc5hCJ7xKVRsFR4cGy0D9rUbyGcbe2/6Z6Q9LYkmk99ZsTB/YMh1S6dbeR2VcBB8lm9FEZGjrqdIqydYuyUSVLtOFCcNRto+Xvgyj66LTZfyKffS8RDfaeBW+ichLd1ItWeF3dFa2CCd1N9QpzhDrrRv8aWZ6LmAZQP2jsRDcrLnBvp1GziUpIoKdtwY31/z/T4eiCOWlTNdxtRq/7+YEXZ6YaxBwwo+HH3Fs6SQVRs78QLDFdcNsCAwEAAaNTMFEwHQYDVR0OBBYEFJA3ux6UPyTzymhSghab+EqtaKOdMB8GA1UdIwQYMBaAFJA3ux6UPyTzymhSghab+EqtaKOdMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHHrzjIDYgbxXmDArXdkE7L++J9q/KdhZJOAzseecIogVutNIo8dlkYIjJzjYcmToBmDv2TI4gW5nZCTp5AKp0aWfT0YkyoT3rqt1OvZZZyLHfaIt/nlCufYRs92kku5+p6LceU4DGwbnangvyLeVbjHsSceypD2zN7A2nTM1Xz86otMggAZxAwoKgL3tvtzMYrxU0f1+eDx9RPQZ5fug48bj+8edtQ2S4iv2Fbe0UHWaHAdSCrJklV9iFK8gNiijxmcx/qLfdMrCWAN+8L/GdzVBrn6zR6SF5jNrpOToLjqeQEKY10TPPwCHST1FNzr8PfAGNb6waZkh+nWvEpYgQk=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+
+    <!--
+      In a real integration this points to the IdP's SSO endpoint.
+      For this demo we use a local placeholder; the .with(saml2Login())
+      test post-processor bypasses the actual redirect entirely.
+    -->
+    <md:SingleSignOnService
+        Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+        Location="http://localhost:8092/mock-idp/saml2/sso"/>
+
+    <md:SingleSignOnService
+        Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+        Location="http://localhost:8092/mock-idp/saml2/sso"/>
+
+  </md:IDPSSODescriptor>
+
+</md:EntityDescriptor>
