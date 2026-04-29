@@ -121,3 +121,7 @@ Most modules seed test users via `ApplicationRunner`:
 | user | user | USER |
 
 Check each module's configuration for specific credentials.
+
+---
+
+More from the author at [umurinan.com](https://umurinan.com).
