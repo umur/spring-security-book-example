@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Minimal self-contained IdP metadata for local testing.
+
+  This document describes a fictitious "CineTrack Test IdP". It is used by
+  RelyingPartyRegistrationConfig to build the SP registration without requiring
+  a live Okta / Azure AD / Keycloak instance during development and CI.
+
+  Key points:
+  - entityID matches the value expected by Saml2LoginConfigTest.
+  - SingleSignOnService points to localhost so redirect assertions work.
+  - The X509Certificate below is a self-signed cert generated alongside the SP
+    keystore. In a real deployment this would be the IdP's public signing cert.
+-->
+<md:EntityDescriptor
+        xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+        xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+        entityID="http://localhost:8080/test-idp"
+        validUntil="2035-01-01T00:00:00Z">
+
+    <md:IDPSSODescriptor
+            WantAuthnRequestsSigned="false"
+            protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <md:KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIICpDCCAYwCCQDU+pQ4pHgSpDANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAls
+b2NhbGhvc3QwHhcNMjQwMTAxMDAwMDAwWhcNMzQxMjMwMDAwMDAwWjAUMRIwEAYD
+VQQDDAlsb2NhbGhvc3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7
+o4qne60TB3wolfe6vWhSMBMQFbmMpYV3HaHbG0J6e4tJaQpsTnuBFobk/lk4JOOs
+BPnepKMXcM2RfI5fFCBB7lZ6LfO5YsZxGTTGMtJFiKMDgjBiWCNFHJUKfHfJ2n4
+B1tnmhqWRz2WNnAR0Y8HMRXQ4mf6fIFhOtmHBHRK3X7FNtA5LRPxeZ3ySoNNOxp
+tGRJFouAc0sPPpRjrBvkmFsXRPtNbWkzXPYrFvJ0C1iDK5nBvnhzO3qdS6RQZQEP
+mBQrOKbvE8z6LpQkU+4vQmAqdQfFwV28c5dxKCUu3XEv9JLq3aM6w5nYvnApTbHe
+mRiGSaOBDHbKGYEVFzdhAgMBAAEwDQYJKoZIhvcNAQELBQADggEBABjFMgq4uLN7
+Db6jMXzIMhpPNBr9FZIS7sFqBNwCLSjbVeJzHtHfzRrQFGr1EUXwCGY1Z5x9kbg
+HkuW3JaHhwJqXNf8RuZzHNqxNlIbVyDzV3h5K6MXzqKSDNV8sQkNSopCMoIwxwH
+hJ6UeX4S+HCd7CmQ3E3XC4N85iHXpFLrr3VV0W5k6hCEJaqJNE3yLVLfQvNKJLl
+3G8vMa2s2YsJAr7WkFVl0pVi0p0FZgUBz7FbfvQjcFMJEJlF10CRVaxI9hcfQG6
+uXD5WmFGPb3xcWEFlcf0YzXjzUJ+Rn6nO3NCSC1pO7R+3iF2HxLQfIjv8eYMaMW
+WolHHnVVuyA=
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </md:KeyDescriptor>
+
+        <md:NameIDFormat>
+            urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+        </md:NameIDFormat>
+
+        <md:SingleSignOnService
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                Location="http://localhost:8080/test-idp/sso"/>
+
+        <md:SingleSignOnService
+                Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                Location="http://localhost:8080/test-idp/sso"/>
+
+    </md:IDPSSODescriptor>
+
+</md:EntityDescriptor>

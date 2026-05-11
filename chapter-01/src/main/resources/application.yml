@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: cinetrack-ch01
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

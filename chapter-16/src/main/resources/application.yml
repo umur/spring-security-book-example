@@ -1,0 +1,10 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: cinetrack-ch16
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:9000

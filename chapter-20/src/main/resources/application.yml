@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cinetrack-recommendation-reactive
+
+server:
+  port: 8080
+
+# No spring.security.oauth2.resourceserver.jwt.jwk-set-uri is set here.
+# JwkConfig generates the RSA key pair in-process so the chapter runs
+# without an external authorization server. In production this would be:
+#
+#   spring:
+#     security:
+#       oauth2:
+#         resourceserver:
+#           jwt:
+#             jwk-set-uri: https://auth.cinetrack.io/.well-known/jwks.json

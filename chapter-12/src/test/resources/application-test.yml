@@ -1,0 +1,29 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          catalog-cc:
+            client-id: recommendation-service
+            client-secret: secret
+            authorization-grant-type: client_credentials
+            scope: catalog:read
+            provider: cinetrack-as
+          cinetrack-login:
+            client-id: recommendation-web
+            client-secret: web-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope: openid, profile, email
+            provider: cinetrack-as
+        provider:
+          cinetrack-as:
+            token-uri: http://localhost:${wiremock.server.port}/oauth2/token
+            authorization-uri: http://localhost:${wiremock.server.port}/oauth2/authorize
+            user-info-uri: http://localhost:${wiremock.server.port}/userinfo
+            jwk-set-uri: http://localhost:${wiremock.server.port}/oauth2/jwks
+            user-name-attribute: sub
+
+cinetrack:
+  catalog:
+    base-url: http://localhost:${wiremock.server.port}

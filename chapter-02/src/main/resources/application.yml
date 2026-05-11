@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cinetrack-ch02
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080

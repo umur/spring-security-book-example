@@ -1,6 +1,0 @@
-server:
-  port: 8089
-
-spring:
-  application:
-    name: x509-certificate-auth-example

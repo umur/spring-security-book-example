@@ -1,0 +1,16 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+spring:
+  application:
+    name: cinetrack-ch24
+  security:
+    user:
+      name: admin
+      password: secret
+      roles: ADMIN

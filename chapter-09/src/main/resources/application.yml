@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: cinetrack-ch09
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          cinetrack-okta:
+            entity-id: "http://localhost:8080/saml2/service-provider-metadata/cinetrack-okta"
+            asserting-party:
+              metadata-uri: "classpath:idp-metadata.xml"
+            acs:
+              location: "http://localhost:8080/login/saml2/sso/cinetrack-okta"
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.saml2: DEBUG

@@ -1,4 +1,0 @@
-spring:
-  session:
-    redis:
-      flush-mode: immediate
