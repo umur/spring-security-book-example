@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: catalog-service
+  jackson:
+    default-property-inclusion: non_null
+
+  # OAuth2 client registration used by ServiceIdentityConfig when this service
+  # calls other upstream services. In production the token-uri points to a real
+  # authorization server (Keycloak, Auth0, etc.). Here it references a local
+  # test stub : tests override this URL via application-test.yml.
+  security:
+    oauth2:
+      client:
+        registration:
+          recommendation-service:
+            client-id: catalog-service
+            client-secret: catalog-secret
+            authorization-grant-type: client_credentials
+            scope: catalog:read
+        provider:
+          recommendation-service:
+            token-uri: http://localhost:9000/oauth2/token
+
+server:
+  port: 8080

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cinetrack-ch08
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.ldap: DEBUG

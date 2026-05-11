@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cinetrack-ch05
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.cinetrack: DEBUG
