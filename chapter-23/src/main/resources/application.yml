@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cinetrack-ch23
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000

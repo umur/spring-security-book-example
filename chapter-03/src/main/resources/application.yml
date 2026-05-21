@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cinetrack-ch03
+  jackson:
+    default-property-inclusion: non_null
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret: test-secret-key-for-development-only-32chars
+
+server:
+  port: 8080

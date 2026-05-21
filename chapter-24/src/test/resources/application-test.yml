@@ -1,0 +1,11 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: secret
+      roles: ADMIN
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

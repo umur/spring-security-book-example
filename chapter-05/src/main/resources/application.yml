@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: cinetrack-ch05
+  jackson:
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unknown-properties: false
+  security:
+    user:
+      name: alice
+      password: password
+      roles: USER
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.cinetrack: DEBUG

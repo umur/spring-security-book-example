@@ -1,0 +1,47 @@
+dn: dc=cinetrack,dc=io
+objectClass: top
+objectClass: domain
+dc: cinetrack
+
+dn: ou=people,dc=cinetrack,dc=io
+objectClass: top
+objectClass: organizationalUnit
+ou: people
+
+dn: uid=alice,ou=people,dc=cinetrack,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: alice
+cn: Alice
+sn: Wonderland
+userPassword: alice123
+
+dn: uid=bob,ou=people,dc=cinetrack,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: bob
+cn: Bob
+sn: Builder
+userPassword: bob123
+
+dn: ou=groups,dc=cinetrack,dc=io
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+
+dn: cn=viewers,ou=groups,dc=cinetrack,dc=io
+objectClass: top
+objectClass: groupOfNames
+cn: viewers
+member: uid=alice,ou=people,dc=cinetrack,dc=io
+member: uid=bob,ou=people,dc=cinetrack,dc=io
+
+dn: cn=admins,ou=groups,dc=cinetrack,dc=io
+objectClass: top
+objectClass: groupOfNames
+cn: admins
+member: uid=alice,ou=people,dc=cinetrack,dc=io
