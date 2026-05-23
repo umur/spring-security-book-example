@@ -25,8 +25,8 @@ Most Spring Security documentation tells you what to configure. This book tells 
 ## Quick start
 
 ```bash
-git clone https://github.com/umur/spring-security-example
-cd spring-security-example/chapter-01
+git clone https://github.com/umur/spring-security-book-example
+cd spring-security-book-example/chapter-01
 mvn spring-boot:run
 ```
 
